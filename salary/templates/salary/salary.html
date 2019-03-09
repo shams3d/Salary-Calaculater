@@ -1,0 +1,52 @@
+
+
+<html>
+    <head>
+    <title>Salary System</title>
+    </head>
+        <body>
+      <div class="page-header">
+     <h1 style="background-color:Tomato;text-align:center;font-family:verdana;">Salary System</h1>
+     <h2 style="background-color:Tomato;text-align:center;">Welcome to Salary System</h2>
+     <p style="font-size:120%;"> Fill the form below to calculate your salary </p>
+     <p a href="{{url_for salary.salary}}"> </p>
+     {employee}
+     <fieldset>
+     <legend > Salary Form </legend>
+       <form action="" method="POST" target="_blank"  oninput="onclick" >
+       <div>
+       Name: <br> <input type="text" name = "Name"  size="15"required><br>
+       Sector:<br>
+        <select name="Sector"><br>
+        <option value="HR"> HR </option>
+        <option value="Audit"> Audit </option>
+        <option value="Customers"> Customers </option>
+        <option value="Sales"> Sales </option>
+      </select>
+       <br>
+     </div>
+     <div>
+        Hrs:  <br> <input type="number" name="Hrs" Hrs min="5" max="50" required size="40"><br>
+        Rate: <br> <input type="number" name="Rate" min="50" max="100" required size="40"><br>
+        <br>
+        <b>Your Salary:</b> <br>  <output name="Salary" for="a b" size="40" style="background-color:#b4b4b4;font-family:verdana;font-size:120%"></output><br>
+        <br>
+        <button type="button" onclick="Salary.value=parseInt(Hrs.value)*parseInt(Rate.value)" >Calculate</button>
+        <button type="reset" >Reset </button><br>
+        <br>
+        <button type="submit" >submit</submit><br>
+     </div>
+     </form>
+     </fieldset>
+ </div>
+ <div class="content container">
+     <div class="row">
+         <div class="col-md-8">
+           <div class="w3-display-container">
+
+            </div>
+         </div>
+     </div>
+ </div>
+    </body>
+</html>
