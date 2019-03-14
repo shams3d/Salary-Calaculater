@@ -1,30 +1,30 @@
-h1 a, h2 a {
-    color: #C25100;
+h1 a, h2 a, p {
+    color: #007bff;
     font-family: 'Times New Roman.';
 }
 body {
     padding-left: 15px;
 }
 .page-header {
-    background-color: #C25100;
+    background-image: linear-gradient(to right, rgba(131,0,0,0), rgba(131,0,0,1));
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
+    color: #025396;
+    font-size: 28pt;
     text-decoration: none;
-    text-align: center;
+    text-align: left;
 }
 
 .page-body {
-    background-color: rgb(89, 150, 162);
+    background-color: #ffffff;
     margin-top: 0px;
     padding: 5px 5px 5px 10px;
 }
-.page-body h1, .page-body h1 a, .page-body h1 a:visited, .page-body h1 a:active, .page-body p  {
-    color: #rgb(102, 155, 173);
+.page-body a, .page-body h1, .page-body h1 a, .page-body h1 a:visited, .page-body h1 a:active, a:active, .page-body p, .page-body dl, .page-body table,  .page-body th,  .page-body tr,  .page-body td {
+    color: #2b2a24;
     font-size: 14pt;
     text-decoration: none;
 }
@@ -38,33 +38,68 @@ h1, h2, h3, h4, p {
 }
 
 .user {
-    color: #828282;
+    color: #2b2a24;
 }
 
 .save {
-    float: right;
+    float: center;
+  margin-left:360px;
 }
 
 .employee-form textarea, .employee-form input {
-    width: 10%;
+    width: 40%;
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
+    color: #2b2a24;
     float: right;
-    font-size: 26pt;
+    font-size: 16pt;
     margin-right: 30px;
 }
 
 .employee {
     margin-bottom:5px;
-    background-color: ##88c7ff;
-    text-align=right;
+    background-color:#ffffff;
+    text-align=center;
 }
 
-.employee h2 a, .employee h2 a:visited , .employee a , .employee p {
-    color: ##88c7ff;
-    background-color: ###8fb9f0;
+.employee h2 a, .employee h2 a:visited , .employee a, .employee p, {
+    color: #2b2a24;
       font-size: 16pt;
-      text-align=right;
+      margin-right: 30px;
+      text-align=center;
+
+  }
+ .employee h3,  .employee h3 a:visited,  .employee h3 a:active, {
+
 }
+.table#t01 {
+  border: 2px solid  #black;
+  background-color: #ffffff;
+  padding:  10px 10px 10px 15px;
+  table-layout: fixed;
+  width: 100%;
+}
+.table td, td a:visited, th , tr, table, {
+    color: #2b2a24;
+    font-size: 16pt;
+    margin-left: 30px;
+    text-align: center;
+}
+.table#t01 tr:nth-child(even) {
+    background-color: #b8c3d1;
+}
+.table#t01 tr:nth-child(odd) {
+  background-color: #b8c3d1;
+}
+.table#t01 th {
+  color: white;
+  background-color: #91908f;
+
+}
+.table#t02 {
+  border: 2px solid  #black;
+  background-color: #ffffff;
+  padding:  10px 10px 10px 15px;
+  table-layout: fixed;
+  width: 100%;

@@ -8,7 +8,7 @@ from djchoices import DjangoChoices, ChoiceItem
 from django.db.models import IntegerField, CharField, F, ExpressionWrapper
 
 def employee_list(request):
-      employees=Employee.objects.filter(user= '2').order_by('created_date')
+      employees=Employee.objects.filter(user= '2').order_by('-published_date')
       return render(request,'salary/employee_list.html',{'employees':employees})
 def employee_details(request,pk):
       employee = get_object_or_404(Employee, pk=pk)

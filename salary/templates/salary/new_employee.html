@@ -5,7 +5,7 @@
   <fieldset>
   <form class="page-body"  method="post" onSubmit="alert('Thank you for using Salary System.')";>
   <div class="page-body">
-      <p class="page-body"> Fill the form below to calculate your salary </p>
+      <p class="page-body"> Fill the form below for a new Employee: </p>
       <table>
         {% csrf_token %}
       {{ form.as_table }}

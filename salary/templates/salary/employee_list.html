@@ -1,13 +1,25 @@
 {% extends 'salary/base.html' %}
 {% block content %}
+<div class="page-body">
+  <p> Click on Employee name for details..</p>
   {% for employee in employees %}
   <div class="page-body">
-        <div class="date">
-        <p> {{employee.created_date}}</p>
-        </div>
-        <h1> <a href="{% url 'employee_detail' pk=employee.pk %}"color="#fffef7"> {{employee.name}} </a></h1>
-        <p>{{ employee.sector }}</p>
-        <p>{{ employee.salary }}</p>
+    <div class="table">
+          <table class="table" id="t01">
+            <tr>
+              <th > Date & Time </th>
+              <th> Name </th>
+              <th> Sector </th>
+              <th> Salary </th>
+            </tr>
+            <tr>
+              <td>{{employee.created_date}}</td>
+              <td><a href="{% url 'employee_detail' pk=employee.pk %}"color="#fffef7"> {{employee.name}} </a></td>
+              <td> {{ employee.sector }} </td>
+              <td> {{ employee.salary }} </td>
+            </tr>
+         </table>
+    </div>
   </div>
   {% endfor %}
 {% endblock %}
