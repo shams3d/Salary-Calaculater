@@ -5,23 +5,23 @@
           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
           <link rel="stylesheet" href="{% static 'css/salary.css' %}">
-
     </head>
-
     <body>
       <div>
         <div class="page-header">
-          <h1 > <a herf= "/" > Salary System </a></h1>
+          <h1 align = "center"><a href="/"color="#fffef7"><span class="glyphicon glyphicon-USD"> <br>
+             Salary System </span> </a></h1>
+        </div>
+        </div>
+        <div class= "top-menu" align="right">
+        <a  href="/" color="#fffef7"> <span  class="glyphicon glyphicon-home"></span></a> <br>
         </div>
         <div class="employee">
           <h2 >Welcome to Salary System</h2> <br>
-          <a href="{% url 'employees_info' %}"color="#fffef7"> Add new Employee...<span class="glyphicon glyphicon-plus"></span></a> <br>
+          <a href="{% url 'new_employee' %}"color="#fffef7"> Add Employee...<span class="glyphicon glyphicon-plus"></span></a> <br>
         </div>
-      </div>
-      <br>
         <div  class="content container">
-          {% block content %}
-
+        {% block content %}
 
         {% endblock %}
         </div>

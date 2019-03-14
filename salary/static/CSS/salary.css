@@ -15,6 +15,7 @@ body {
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
+    text-align: center;
 }
 
 .page-body {
@@ -58,10 +59,12 @@ h1, h2, h3, h4, p {
 .employee {
     margin-bottom:5px;
     background-color: ##88c7ff;
+    text-align=right;
 }
 
-.employee h2 a, .employee h2 a:visited , .employee a {
+.employee h2 a, .employee h2 a:visited , .employee a , .employee p {
     color: ##88c7ff;
     background-color: ###8fb9f0;
-      font-size: 18pt;
+      font-size: 16pt;
+      text-align=right;
 }

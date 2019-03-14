@@ -1,0 +1,19 @@
+{% extends 'salary/base.html' %}
+{% block content %}
+<div class= "top-menue" >
+  <a href="{% url 'edit_employee' pk=employee.pk %}"color="#fffef7">Edit Employee..<span class="glyphicon glyphicon-Pencil"></span></a> <br>
+</div>
+    <div class = "page-body">
+      {% if employee.created_date %}
+      {{employee.created_date}}
+    </div>
+    <div class="page-body">
+      <h1>Name: {{ employee.name }}</h1>
+      <p> Sector: {{ employee.sector }}</p>
+      <p> Grade: {{ employee.grade }}</p>
+      <p> Hrs: {{employee.hrs}}</p>
+      <p> Rate: {{employee.rate}}</p>
+      <p> Salary: {{ employee.salary }}</p>
+      {% endif %}
+    </div>
+{% endblock %}

@@ -27,6 +27,7 @@ class Employee(models.Model):
     rate = models.PositiveIntegerField(default="0")
     salary = models.PositiveIntegerField(null=True, blank=True, default="0",editable=True)
     created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
 
     class Meta:
         verbose_name = 'Employees'
@@ -40,9 +41,11 @@ class Employee(models.Model):
         except TypeError:
             pass
         super(Employee,self).save(*args, **kwargs)
+        
     def publish(self):
         self.published_date = timezone.now()
         self.save()
+        
 
     def __int__(self):
         return self.salary()

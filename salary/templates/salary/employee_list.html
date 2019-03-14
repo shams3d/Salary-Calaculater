@@ -1,0 +1,13 @@
+{% extends 'salary/base.html' %}
+{% block content %}
+  {% for employee in employees %}
+  <div class="page-body">
+        <div class="date">
+        <p> {{employee.created_date}}</p>
+        </div>
+        <h1> <a href="{% url 'employee_detail' pk=employee.pk %}"color="#fffef7"> {{employee.name}} </a></h1>
+        <p>{{ employee.sector }}</p>
+        <p>{{ employee.salary }}</p>
+  </div>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'salary/base.html' %}
+{%for employee in add_employee %}
+  {% block content %}
+  <div class="page-body">
+  <fieldset>
+  <form class="page-body"  method="post" onSubmit="alert('Thank you for using Salary System.')";>
+  <div class="page-body">
+      <p class="page-body"> Fill the form below to calculate your salary </p>
+      <table>
+        {% csrf_token %}
+      {{ form.as_table }}
+      </table>
+      <br><br>
+      <button  type="button" onclick="salary.value=parseInt(hrs.value)*parseInt(rate.value)" >Calculate </button>
+      <button  type="reset" >Reset </button>
+      <button type="submit" name="submit"> Submit </button>
+  </div>
+</form>
+</fieldset>
+{% endblock %}
+</div>
+{% endfor %}
