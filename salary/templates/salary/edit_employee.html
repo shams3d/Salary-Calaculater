@@ -1,16 +1,16 @@
 {% extends 'salary/base.html' %}
   {% block content %}
-
+<br><br>
   <div class="page-body">
   <fieldset>
-  <form class="employee"  method="post" onSubmit="alert('Thank you for using Salary System.')";>
+  <form class="alert alert-info"  method="post" onSubmit="alert('Are sure you want to save ?')";>
     <table>
       {% csrf_token %}
     {{ form.as_table }}
     </table>
     <br>
     <div class="save">
-    <button  type="submit" name="save"> Save </button>
+    <button  type="submit" name="save" class="btn btn-primary"> Save </button>
     </div>
   </form>
   </fieldset>

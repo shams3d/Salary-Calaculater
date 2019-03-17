@@ -1,28 +1,33 @@
 {% extends 'salary/base.html' %}
 {% block content %}
-<div class= "employee" >
-<h3><a href="{% url 'edit_employee' pk=employee.pk %}"color="#fffef7">Edit Employee..<span class="glyphicon glyphicon-Pencil"></span></a></h3>
+<br><br>
+<div class= "page-body" >
+<a href="{% url 'edit_employee' pk=employee.pk %}"color="#fffef7"><button type="button" class="btn btn-default">Edit Employee</button></a>
+<a href="{% url 'delete_employee' pk=employee.pk %}"color="#fffef7"><button type="button" onclick="alert('Are you sure you want to remove Employee?')" class="btn btn-default">Delete Employee</button></a>
 </div>
-    <div class = "employee">
+    <div class = "nav nav-pills">
       {% if employee.created_date %}
-      <h3 class ="employee"> {{employee.created_date}} </h3>
+      <h4 class="nav nav-pills"> {{employee.created_date}} </h4>
     </div>
-    <div class="page-body">
+    <div class="nav nav-pills">
       <table class= "table" id="t02">
-        <h3> {{ employee.name }}</h3>
-          <dl class="page-body">
-            <dt> Name: </dt>
-            <dd>{{ employee.name }}</dd>
-            <dt> Sector: </dt>
-            <dd>{{ employee.sector }}</dd>
-            <dt> Grade: </dt>
-            <dd>{{ employee.grade }}</dd>
-            <dt> Hrs: </dt>
-            <dd>{{employee.hrs}}</dd>
-            <dt> Rate: </dt>
-            <dd> {{employee.rate}} </dd>
-            <dt> Salary: </dt>
-            <dd> {{ employee.salary }} </dd>
+        <h4 class="nav nav-pills"> {{ employee.name }}</h4>
+          <dl class="table">
+            <dt class="list-group-item list-group-item-dark"> Name: </dt>
+            <dd class="list-group-item list-group-item-info">{{ employee.name }}</dd>
+            <dt class="list-group-item list-group-item-dark"> Sector: </dt>
+            <dd class="list-group-item list-group-item-info">{{ employee.sector }}</dd>
+            <dt class="list-group-item list-group-item-dark"> Grade: </dt>
+            <dd class="list-group-item list-group-item-info">{{ employee.grade }}</dd>
+            <dt class="list-group-item list-group-item-dark"> Hrs: </dt>
+            <dd class="list-group-item list-group-item-info">{{employee.hrs}}</dd>
+            <dt class="list-group-item list-group-item-dark"> Rate: </dt>
+            <dd class="list-group-item list-group-item-info"> {{employee.rate}} </dd>
+            <dt class="list-group-item list-group-item-dark"> Overtime: </dt>
+            <dd class="list-group-item list-group-item-info"> {{ employee.overtime }} </dd>
+            <dt class="list-group-item list-group-item-dark"> Salary: </dt>
+            <dd class="list-group-item list-group-item-info"> {{ employee.salary }} </dd>
+
           </dl>
         {{ employee.as_table }}
       </table>

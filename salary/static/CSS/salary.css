@@ -1,12 +1,12 @@
 h1 a, h2 a, p {
-    color: #007bff;
-    font-family: 'Times New Roman.';
+    color: #405b80;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 body {
-    padding-left: 15px;
+  font-family: page-body
 }
 .page-header {
-    background-image: linear-gradient(to right, rgba(131,0,0,0), rgba(131,0,0,1));
+    background-image: linear-gradient(to right, rgba(21,0,0,0), rgba(21,0,0,1));
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -20,13 +20,19 @@ body {
 
 .page-body {
     background-color: #ffffff;
-    margin-top: 0px;
-    padding: 5px 5px 5px 10px;
+    margin-top: 10px;
+    margin-left: 5px
+    text-align: left;
+    padding: 10px 10px 10px 15px;
 }
-.page-body a, .page-body h1, .page-body h1 a, .page-body h1 a:visited, .page-body h1 a:active, a:active, .page-body p, .page-body dl, .page-body table,  .page-body th,  .page-body tr,  .page-body td {
+.page-body a, .page-body h1, .page-body h1 a, .page-body h1 a:visited, .page-body h1 a:active, .page-body h2, .page-body h3, a:active, .page-body p, .page-body dl, .page-body table,  .page-body th,  .page-body tr,  .page-body td {
     color: #2b2a24;
     font-size: 14pt;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 5px
     text-decoration: none;
+
 }
 
 .content {
@@ -34,7 +40,7 @@ body {
 }
 
 h1, h2, h3, h4, p {
-    font-family: 'Times New Roman.', cursive;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 .user {
@@ -45,6 +51,10 @@ h1, h2, h3, h4, p {
     float: center;
   margin-left:360px;
 }
+.login {
+    float: center;
+  margin-left:80px;
+}
 
 .employee-form textarea, .employee-form input {
     width: 40%;
@@ -53,44 +63,41 @@ h1, h2, h3, h4, p {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #2b2a24;
     float: right;
-    font-size: 16pt;
+    font-size: 14pt;
+    text-align: center;
     margin-right: 30px;
 }
 
 .employee {
     margin-bottom:5px;
+    margin-left: 30px;
+    float: left;
     background-color:#ffffff;
-    text-align=center;
+    text-align:justify;
 }
 
 .employee h2 a, .employee h2 a:visited , .employee a, .employee p, {
     color: #2b2a24;
-      font-size: 16pt;
-      margin-right: 30px;
-      text-align=center;
+      font-size: 14pt;
+      float: left;
+      margin-left: 30px;
+      text-align:justify;
 
   }
- .employee h3,  .employee h3 a:visited,  .employee h3 a:active, {
 
-}
 .table#t01 {
-  border: 2px solid  #black;
-  background-color: #ffffff;
-  padding:  10px 10px 10px 15px;
+  border: 1px solid  #black;
+  background-color: #cde5f7;
+  padding:  2px 2px 2px 5px;
   table-layout: fixed;
-  width: 100%;
+  width: 90%;
 }
-.table td, td a:visited, th , tr, table, {
-    color: #2b2a24;
-    font-size: 16pt;
-    margin-left: 30px;
-    text-align: center;
-}
+
 .table#t01 tr:nth-child(even) {
-    background-color: #b8c3d1;
+    background-color: #cde5f7;
 }
 .table#t01 tr:nth-child(odd) {
-  background-color: #b8c3d1;
+  background-color: #cde5f7;
 }
 .table#t01 th {
   color: white;
@@ -98,8 +105,20 @@ h1, h2, h3, h4, p {
 
 }
 .table#t02 {
-  border: 2px solid  #black;
+  border: 1px solid:#black;
   background-color: #ffffff;
-  padding:  10px 10px 10px 15px;
+  padding:  5px 5px 5px 10px;
   table-layout: fixed;
-  width: 100%;
+  width: 60%;
+}
+.table#t03 {
+    border: 1px solid  #black;
+    background-color: #91908f;
+    padding:  10px 10px 10px 15px;
+    table-layout: fixed;
+    width: 60%;
+  }
+.table#t03.center{
+    margin-left:5%;
+    margin-right:5%;
+  }

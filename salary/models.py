@@ -18,26 +18,36 @@ class Employee(models.Model):
             B = ChoiceItem("B")
             C = ChoiceItem("C")
             D = ChoiceItem("D")
-        
+    def hrs(value):
+        value = round(20,2)
+
+    
+    
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50,default = "Enter Employee Name here...", blank = False)
+    name = models.CharField(max_length=50,null=False,blank = False)
     sector = models.CharField(max_length=100, choices = SectorChoice.choices, default = 'HR')
     grade = models.CharField(max_length = 20, choices = GradeChoice.choices, default = 'A', null=True)
-    hrs = models.PositiveIntegerField(default ="0")
-    rate = models.PositiveIntegerField(default="0")
-    salary = models.PositiveIntegerField(null=True, blank=True, default="0",editable=True)
+    hrs = models.FloatField(blank = False, validators = [hrs])
+    rate = models.FloatField(blank = False)
+    overtime= models.FloatField(default="0", blank=True, null=True)
+    salary = models.FloatField(default="0", blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
-
+    
     class Meta:
         verbose_name = 'Employees'
         verbose_name_plural = 'Employee'
-    
-    
-    
+        
+   
+        
     def save(self, *args, **kwargs):
+        if self.hrs <= 20:
+            self.overtime = 0
+        elif self.hrs >= 20:
+            self.overtime = round(self.hrs - 20,2) + round(self.rate * 1.5,2)
+            pass           
         try:
-            self.salary=self.hrs * self.rate
+            self.salary= round(self.overtime+self.hrs * self.rate,2)
         except TypeError:
             pass
         super(Employee,self).save(*args, **kwargs)
@@ -48,7 +58,7 @@ class Employee(models.Model):
         
 
     def __int__(self):
-        return self.salary()
+        return self.save()
     
     def __str__(self):
         return '' + self.name 
