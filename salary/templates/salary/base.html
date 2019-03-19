@@ -2,10 +2,12 @@
 <html>
     <head>
         <title>Salary System</title>
-          <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-          <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
           <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
           <link rel="stylesheet" href="{% static 'css/salary.css' %}">
+          <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
+
 
     </head>
     <body>
@@ -16,7 +18,7 @@
           {% if user.is_authenticated %}
           <ul class="nav nav-pills">
             <li class="nav-item">
-              <a class="nav-link active" href="/">Home</a>
+              <a class="nav-link " href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'new_employee' %}">Add Employee</a>
@@ -25,10 +27,11 @@
               <a class="nav-link" href="{% url 'logout' %}">Log out</a>
             </li>
         </div>
+        <small class="top-menu" ><p > Hello {{user.username|upper}}</p></small>
         <div class="nav nav-pills">
             {% else %}
             <li class="nav-item">
-              <a class="nav-link active" href="/">Home</a>
+              <a class="nav-link " href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'login' %}">Login</a>
@@ -36,12 +39,7 @@
           </ul>
         </div>
       {% endif %}
-      <div  class="top-menu" >
-        {%  if user.is_authenticated %}
-        <p class="content"> Hello {{ user.username }}</p>
-        {% endif %}
-      </div>
-  <div  class="content container">
+  <div  class="page-body">
     {% block content %}
 
     {% endblock %}

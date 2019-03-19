@@ -1,0 +1,22 @@
+strong, span, a, p {
+    color: #405b80;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.pagination{
+  text-align: center;
+  float: center;
+  margin-left:360px;
+  font-size: 10pt;
+}
+.page-item{
+
+}
+.current{
+
+}
+.page-link{
+
+}
+.justify-content-center{
+
+}

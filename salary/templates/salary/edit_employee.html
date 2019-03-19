@@ -2,9 +2,8 @@
   {% block content %}
 <br><br>
   <div class="page-body">
-  <fieldset>
-  <form class="alert alert-info"  method="post" onSubmit="alert('Are sure you want to save ?')";>
-    <table>
+  <form class="form-horizontal"  method="post" onSubmit="alert('Are sure you want to save ?')";>
+    <table class="table-bordered">
       {% csrf_token %}
     {{ form.as_table }}
     </table>
@@ -13,6 +12,5 @@
     <button  type="submit" name="save" class="btn btn-primary"> Save </button>
     </div>
   </form>
-  </fieldset>
 </div>
 {% endblock%}

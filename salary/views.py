@@ -2,16 +2,22 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django_tables2 import RequestConfig
 from .models import Employee
 from .forms import EmployeeForm
+from .tables import EmployeeTable
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from djchoices import DjangoChoices, ChoiceItem
 from django.db.models import IntegerField, CharField, F, ExpressionWrapper, Count
 
 def employee_list(request):
-      employees= Employee.objects.filter(published_date__lte=timezone.now()).order_by('-created_date')
-      return render(request,'salary/employee_list.html',{'employees':employees})
+      #QuerySets
+      employees= Employee.objects.filter(published_date__lte=timezone.now()).order_by('created_date')
+      #Tables
+      table = EmployeeTable(Employee.objects.filter(published_date__lte=timezone.now()).order_by('created_date'))
+      RequestConfig(request,paginate={'per_page': 5}).configure(table)
+      return render(request,'salary/employee_list.html',{'table':table})
 def employee_details(request,pk):
       employee = get_object_or_404(Employee, pk=pk)
       return render(request, 'salary/employee_detail.html', {'employee': employee})
@@ -62,9 +68,3 @@ def delete_employee(request, pk):
       employee= get_object_or_404(Employee, pk=pk)
       employee.delete()
       return redirect('employee_list')
-def listing(request):
-    employee_list = Employee.objects.all()
-    paginator = Paginator(employee_list, 10)
-    page = request.GET.get('employee_list')
-    employee = paginator.get_page(employee_list)
-    return render(request, 'employee_list.html', {'employee': employee})

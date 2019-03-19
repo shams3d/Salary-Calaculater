@@ -3,7 +3,7 @@ h1 a, h2 a, p {
     font-family: 'Nanum Gothic', sans-serif;
 }
 body {
-  font-family: page-body
+  font-family: 'Nanum Gothic', sans-serif;
 }
 .page-header {
     background-image: linear-gradient(to right, rgba(21,0,0,0), rgba(21,0,0,1));
@@ -20,10 +20,11 @@ body {
 
 .page-body {
     background-color: #ffffff;
-    margin-top: 10px;
-    margin-left: 5px
-    text-align: left;
-    padding: 10px 10px 10px 15px;
+    margin: 10px, 10px, 10px, 20px;
+    position: relative;
+    float: left;
+    margin-left: 30px;
+    padding:  5px, 5px, 5px 10px;
 }
 .page-body a, .page-body h1, .page-body h1 a, .page-body h1 a:visited, .page-body h1 a:active, .page-body h2, .page-body h3, a:active, .page-body p, .page-body dl, .page-body table,  .page-body th,  .page-body tr,  .page-body td {
     color: #2b2a24;
@@ -36,7 +37,13 @@ body {
 }
 
 .content {
-    margin-left: 30px;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: auto;
+  margin-left: auto;
+  width:800px;
+
 }
 
 h1, h2, h3, h4, p {
@@ -49,11 +56,12 @@ h1, h2, h3, h4, p {
 
 .save {
     float: center;
-  margin-left:360px;
+  margin-left:250px;
 }
 .login {
-    float: center;
-  margin-left:80px;
+    float: left;
+    margin-left: 360px;
+
 }
 
 .employee-form textarea, .employee-form input {
@@ -63,9 +71,9 @@ h1, h2, h3, h4, p {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #2b2a24;
     float: right;
-    font-size: 14pt;
+    font-size: 10pt;
+    margin-right: 20px;
     text-align: center;
-    margin-right: 30px;
 }
 
 .employee {
@@ -78,30 +86,37 @@ h1, h2, h3, h4, p {
 
 .employee h2 a, .employee h2 a:visited , .employee a, .employee p, {
     color: #2b2a24;
-      font-size: 14pt;
+      font-size: 10pt;
       float: left;
       margin-left: 30px;
       text-align:justify;
 
   }
+.list{
+  padding:  20px 20px 20px 30px;
+  margin-left: 30px;
+  width:60%;
+}
 
 .table#t01 {
-  border: 1px solid  #black;
+  border: 1px solid black;
   background-color: #cde5f7;
-  padding:  2px 2px 2px 5px;
-  table-layout: fixed;
-  width: 90%;
+  table-layout: auto;
+
 }
 
 .table#t01 tr:nth-child(even) {
     background-color: #cde5f7;
+    table-layout: auto;
 }
 .table#t01 tr:nth-child(odd) {
   background-color: #cde5f7;
+  table-layout: auto;
 }
 .table#t01 th {
   color: white;
   background-color: #91908f;
+  table-layout: auto;
 
 }
 .table#t02 {
@@ -111,14 +126,51 @@ h1, h2, h3, h4, p {
   table-layout: fixed;
   width: 60%;
 }
-.table#t03 {
-    border: 1px solid  #black;
-    background-color: #91908f;
-    padding:  10px 10px 10px 15px;
-    table-layout: fixed;
-    width: 60%;
+.login_table#t03 {
+  border: 1px solid:black;
+  width: 60%;
+  max-width: 330px;
+  padding: 40px, 40px,40px,60px;
+  margin: 0 auto;
+  table-layout: fixed;
   }
-.table#t03.center{
-    margin-left:5%;
-    margin-right:5%;
+.username input[type="username"]{
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
   }
+ .password input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  }
+  .checkbox {
+    font-weight: 400;
+    float: center;
+    margin:auto
+  }
+  .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+.table#t03.login.form-control:focus {
+    z-index: 2;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+}
