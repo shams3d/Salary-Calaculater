@@ -8,23 +8,23 @@
         <p  style="color:red;">Your username and password didn't match. Please try again.</p>
     {% endif %}
 </div>
-  <div class="text-cente">
+  <div class="content">
     <form class="form-login" method="post" action="{% url 'login' %}">
       {% csrf_token %}
       <h1 class="h3 mb-3 font-weight-normal">Please login</h1>
-      <table class="info">
-        <tr >
+      <table id="#t03" class="login_table">
+        <tr>
           <td><label for="username" class="sr-only"> {{ form.username.label_tag }}</label></td>
-          <td class="form-control" placeholder="Username">Username{{form.username}}</td>
+          <td class="form-control" placeholder="Username">Username<br>{{form.username}}</td>
         </tr>
         <tr>
           <td><label for="inputPassword" class="sr-only"> {{ form.password.label_tag }}</label></td>
-          <td  class="form-control" placeholder="Password" required> Password{{form.password}}</td>
+          <td  class="form-control" placeholder="Password" required> Password <br> {{form.password}}</td>
         </tr>
       </table>
       <div class="checkbox mb-3">
         <label>
-          <input type="checkbox" value="1"> Remember me
+          <input type="checkbox" value="True"> Remember me </input>
         </label>
       </div>
       <button class="btn btn-primary" type="submit">Login</button>

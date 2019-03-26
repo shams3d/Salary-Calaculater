@@ -126,13 +126,7 @@ h1, h2, h3, h4, p {
   table-layout: fixed;
   width: 60%;
 }
-.login_table#t03 {
-  border: 1px solid:black;
-  width: 60%;
-  max-width: 330px;
-  padding: 40px, 40px,40px,60px;
-  margin: 0 auto;
-  table-layout: fixed;
+.
   }
 .username input[type="username"]{
   margin-bottom: -1px;

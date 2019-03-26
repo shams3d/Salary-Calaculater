@@ -49,6 +49,14 @@ body {
 }
 .content p{
   text-align: justify;
-  font-size: 14pt;
+  font-size: 12pt;
   text - color: red;
+}
+.login_table#t03 {
+  border: 1px solid:black;
+  width: 60%;
+  max-width: 330px;
+  padding: 40px, 40px,40px,60px;
+  margin: 0 auto;
+  table-layout: fixed;
 }

@@ -21,6 +21,9 @@ class Employee(models.Model):
     def hrs(value):
         value = round(20,2)
 
+    def rate(value):
+        value = round(0,2)
+      
     
     
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -28,7 +31,7 @@ class Employee(models.Model):
     sector = models.CharField(max_length=100, choices = SectorChoice.choices, default = 'HR')
     grade = models.CharField(max_length = 20, choices = GradeChoice.choices, default = 'A', null=True)
     hrs = models.FloatField(blank = False, validators = [hrs])
-    rate = models.FloatField(blank = False)
+    rate = models.FloatField(blank = False, validators = [rate])
     overtime= models.FloatField(default="0", blank=True, null=True)
     salary = models.FloatField(default="0", blank=True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
@@ -38,16 +41,14 @@ class Employee(models.Model):
         verbose_name = 'Employees'
         verbose_name_plural = 'Employee'
         
-   
-        
     def save(self, *args, **kwargs):
         if self.hrs <= 20:
             self.overtime = 0
         elif self.hrs >= 20:
-            self.overtime = round(self.hrs - 20,2) + round(self.rate * 1.5,2)
+            self.overtime = self.hrs - 20 + self.rate * 1.5
             pass           
         try:
-            self.salary= round(self.overtime+self.hrs * self.rate,2)
+            self.salary= self.overtime + self.hrs * self.rate
         except TypeError:
             pass
         super(Employee,self).save(*args, **kwargs)

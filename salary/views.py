@@ -68,3 +68,6 @@ def delete_employee(request, pk):
       employee= get_object_or_404(Employee, pk=pk)
       employee.delete()
       return redirect('employee_list')
+def login_user(request, template_name='registration/login.html', extra_context=None):
+      if request.POST.has_key('remember_me'):
+            request.session.set_expiry(1209600) # 2 weeks
