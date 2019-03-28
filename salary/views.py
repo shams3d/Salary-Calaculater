@@ -7,9 +7,8 @@ from .models import Employee
 from .forms import EmployeeForm
 from .tables import EmployeeTable
 from django.contrib.auth.decorators import login_required
-from django.core.paginator import Paginator
 from djchoices import DjangoChoices, ChoiceItem
-from django.db.models import IntegerField, CharField, F, ExpressionWrapper, Count
+
 
 def employee_list(request):
       #QuerySets
@@ -68,6 +67,3 @@ def delete_employee(request, pk):
       employee= get_object_or_404(Employee, pk=pk)
       employee.delete()
       return redirect('employee_list')
-def login_user(request, template_name='registration/login.html', extra_context=None):
-      if request.POST.has_key('remember_me'):
-            request.session.set_expiry(1209600) # 2 weeks

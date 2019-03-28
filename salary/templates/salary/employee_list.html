@@ -2,20 +2,23 @@
 {% load render_table from django_tables2 %}
 {% block content %}
 <br><br>
-<div class="content">
-  <p> Click on Employee name for details..</p>
+<div class="page-body">
+  <p class="text-info"> Click on Employee name for details..</p>
 </div>
     <div class="table-striped">
           <table class="table-bordered" id="t01">
-        
               {% render_table table %}
-
+              {% for name in EmployeeTable %}
+              {% if name == tables.LinkColumn %}
+              <a href="/" title="Click on name for details..."></a>
             <tr class="table">
               <th class="table"> </th>
             </tr>
             <tr class="table">
               <td class="table"></td>
             </tr>
+            {% endif %}
+            {% endfor %}
          </table>
     </div>
 {% endblock %}

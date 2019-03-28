@@ -1,53 +1,53 @@
 {% load static %}
 <html>
     <head>
-        <title>Salary System</title>
+        <title>Salary Calculater</title>
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
           <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
           <link rel="stylesheet" href="{% static 'css/salary.css' %}">
-          <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
-
 
     </head>
     <body>
-        <div class="page-header">
-          <h1><a href="/"color="#914201"><span class="glyphicon glyphicon-USD"></span> Salary System </a></h1>
-        </div>
-        <div class="nav nav-pills">
-          {% if user.is_authenticated %}
-          <ul class="nav nav-pills">
-            <li class="nav-item">
-              <a class="nav-link " href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'new_employee' %}">Add Employee</a>
+      <div class="page-header">
+        <h1><a href="/"color="#914201"> Salary Calculater </a></h1>
+      </div>
+      {% if user.is_authenticated %}
+      <div class="col-sm-4">
+
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link " href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'new_employee' %}">Add Employee</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'logout' %}">Log out</a>
-            </li>
-        </div>
-        <small class="top-menu" ><p > Hello {{user.username|upper}}</p></small>
-        <div class="nav nav-pills">
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link " href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
-            </li>
+              </li>
+      </div>
+      <small class="top-menu" ><p > Hello {{user.username|upper}}</p></small>
+      {% else %}
+      <div class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link " href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
           </ul>
-        </div>
+      </div>
       {% endif %}
-  <div  class="container">
-    <div class="row">
-      <div class="col-sm-9">
-    {% block content %}
+      <div  class="container">
+        <div class="row">
+          <div class="col-sm-9">
+            <div class="w3-display-container">
+              {% block content %}
 
-    {% endblock %}
-  </div>
-  </div>
-  </div>
-</body>
-</head>
+              {% endblock %}
+              </div>
+            </div>
+          </div>
+        </div>
+    </body>
 </html>
